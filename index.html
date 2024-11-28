@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="main.js" defer></script>
+  </head>
+  <body class="bg-light-grayish-cyan">
+    <div class="wrapper">
+      <div class="title">
+        <h1 class="text-center text-very-dark-cyan">SPLI<br />TTER</h1>
+      </div>
+      <div class="main-container bg-white">
+        <form class="tip-form" id="tipForm">
+          <div class="form-group">
+            <div class="form-group__header">
+              <label class="text-dark-grayish-cyan mb-1" for="bill">Bill</label>
+              <small id="billError"></small>
+            </div>
+            <div class="icon-input">
+              <img src="./images/icon-dollar.svg" alt="" />
+              <input type="number" name="bill" id="bill" value="" />
+            </div>
+          </div>
+
+          <div>
+            <div class="form-group__header">
+              <div class="mb-1 text-dark-grayish-cyan">Select Tip %</div>
+              <small id="tipError"></small>
+            </div>
+            <div class="tip-options">
+              <input
+                type="radio"
+                id="tip5"
+                name="tip"
+                value="5"
+                class="tip-input"
+              />
+              <label for="tip5" class="tip-label">5%</label>
+              <input
+                type="radio"
+                id="tip10"
+                name="tip"
+                value="10"
+                class="tip-input"
+              />
+              <label for="tip10" class="tip-label">10%</label>
+              <input
+                type="radio"
+                id="tip15"
+                name="tip"
+                value="15"
+                class="tip-input"
+              />
+              <label for="tip15" class="tip-label">15%</label>
+              <input
+                type="radio"
+                id="tip25"
+                name="tip"
+                value="25"
+                class="tip-input"
+              />
+              <label for="tip25" class="tip-label">25%</label>
+              <input
+                type="radio"
+                id="tip50"
+                name="tip"
+                value="50"
+                class="tip-input"
+              />
+              <label for="tip50" class="tip-label">50%</label>
+              <input type="number" placeholder="Custom" id="tip" name="tip" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group__header">
+              <label for="people" class="mb-1 text-dark-grayish-cyan"
+                >Number of People</label
+              >
+              <small id="peopleError"></small>
+            </div>
+            <div class="icon-input">
+              <img src="./images/icon-person.svg" alt="" />
+              <input type="number" name="people" id="people" value="" />
+            </div>
+          </div>
+        </form>
+        <div class="total bg-very-dark-cyan">
+          <div class="total__results">
+            <div class="total__tip text-white">
+              <div class="left">
+                Tip Amount
+                <span class="total__division text-dark-grayish-cyan"
+                  >/ person</span
+                >
+              </div>
+              <span class="total__tip__result text-strong-cyan">$0.00</span>
+            </div>
+            <div class="total__split text-white">
+              <div class="left">
+                Total
+                <span class="total__division text-dark-grayish-cyan"
+                  >/ person</span
+                >
+              </div>
+              <span class="total__split__result text-strong-cyan">$0.00</span>
+            </div>
+          </div>
+          <button id="resetButton">RESET</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

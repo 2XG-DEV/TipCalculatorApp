@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  /* Primary Colors */
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  /* Neutral Colors */
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Utility Classes for Background Color */
+.bg-strong-cyan {
+  background-color: var(--strong-cyan);
+}
+
+.bg-very-dark-cyan {
+  background-color: var(--very-dark-cyan);
+}
+
+.bg-dark-grayish-cyan {
+  background-color: var(--dark-grayish-cyan);
+}
+
+.bg-grayish-cyan {
+  background-color: var(--grayish-cyan);
+}
+
+.bg-light-grayish-cyan {
+  background-color: var(--light-grayish-cyan);
+}
+
+.bg-very-light-grayish-cyan {
+  background-color: var(--very-light-grayish-cyan);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+/* Utility Classes for Text Color */
+.text-strong-cyan {
+  color: var(--strong-cyan);
+}
+
+.text-very-dark-cyan {
+  color: var(--very-dark-cyan);
+}
+
+.text-dark-grayish-cyan {
+  color: var(--dark-grayish-cyan);
+}
+
+.text-grayish-cyan {
+  color: var(--grayish-cyan);
+}
+
+.text-light-grayish-cyan {
+  color: var(--light-grayish-cyan);
+}
+
+.text-very-light-grayish-cyan {
+  color: var(--very-light-grayish-cyan);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: initial;
+  }
+}
+
+.tip-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tip-input {
+  display: none;
+}
+
+.tip-label {
+  display: block;
+  padding: 0.7rem 0;
+  background-color: var(--very-dark-cyan);
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+
+  color: var(--white);
+  font-family: "Space Mono";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.tip-input:checked + .tip-label {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.main-container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1.5625rem 1.5625rem 0rem 0rem;
+  box-shadow: 0px 32px 43px 0px rgba(79, 166, 175, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-top-right-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+  background: var(--very-light-grayish-cyan);
+}
+
+input:focus {
+  outline: none;
+}
+
+.icon-input {
+  display: flex;
+  align-items: center;
+  background: var(--very-light-grayish-cyan);
+  padding-left: 1rem;
+  border-radius: 0.3125rem;
+}
+
+input.valid {
+  border-bottom: 2px solid var(--strong-cyan);
+}
+
+input.invalid {
+  border-bottom: 2px solid #e17052;
+}
+
+.tip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.total {
+  border-radius: 0.9375rem;
+  padding: 1.5rem;
+  padding-top: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.total__tip,
+.total__split {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.total__split__result,
+.total__tip__result {
+  font-size: 2rem;
+}
+
+.total button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0.3125rem;
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  font-family: "Space Mono";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+  width: 100%;
+}
+
+.total button:hover {
+  background: var(--strong-cyan);
+}
+
+.title {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 58rem) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 57.5rem;
+    margin: 0 auto;
+    border-radius: 1.5625rem;
+    height: 30.06rem;
+  }
+
+  .tip-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wrapper {
+    justify-content: space-around;
+    height: auto;
+    gap: 6rem;
+  }
+
+  .total {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .total__results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.56rem;
+  }
+
+  .total__tip__result {
+    font-size: 3rem;
+  }
+
+  .total__split__result {
+    font-size: 3rem;
+  }
+}
